@@ -54,6 +54,8 @@ jobs:
           tags: |
             yuukibot/yuukichan:latest,
             ghcr.io/yuuki-discord/yuuki-bot:latest,
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Build and push the devcontainer
         uses: docker/build-push-action@v2
         with: 
